@@ -2,38 +2,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>WebView Test</title>
     <!-- No cache so it shows up in github page faster-->
     <meta http-equiv='cache-control' content='no-cache'> 
     <meta http-equiv='expires' content='0'> 
     <meta http-equiv='pragma' content='no-cache'>
-    <title>WebView Test</title>
-    <style>
-    :root {
-        font: -apple-system-body;
-        
-    }
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="supported-color-schemes" content="dark light">
+    <meta name="color-scheme" content="dark light">
+    <meta name="theme-color" content="">
 
-    @media (prefers-color-scheme: dark) {
+    <!--
+      Conditionally either load the light or the dark stylesheet. The matching file
+      will be downloaded with `highest`, the non-matching file with `lowest`
+      priority. If the browser doesn't support `prefers-color-scheme`, the media
+      query is unknown and the files are downloaded with `lowest` priority (but
+      above I already force `highest` priority for my default light experience).
+    -->
+    <link rel="stylesheet" href="/dark.css" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="/light.css" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)">
+    <!-- The main stylesheet -->
+    <link rel="stylesheet" href="/style.css">    
 
-    }
-
-    body {
-        background-color: var(--background-color);
-        color: var(--on-background-color);
-        padding: 20px;
-        font-size: 1rem;
-    }
-
-    button {
-        background-color: var(--surface-color);
-        color: var(--on-surface-color);
-        border: none;
-        padding: 10px 20px;
-        margin: 20px;
-        cursor: pointer;
-        font-size: 1rem;
-        border-radius: 4px;
-    }
     </style>
 </head>
 <body>
