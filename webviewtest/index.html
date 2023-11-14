@@ -7,19 +7,10 @@
     :root {
         font: -apple-system-body;
         
-        --background-color: #f5f5f6;
-        --on-background-color: #000000;
-        --surface-color: #ffffff;
-        --on-surface-color: #000000;
     }
 
     @media (prefers-color-scheme: dark) {
-        :root {
-            --background-color: #000000;
-            --on-background-color: #ffffff;
-            --surface-color: #1c1c1d;
-            --on-surface-color: #ffffff;
-        }
+
     }
 
     body {
@@ -54,16 +45,6 @@
 <button id="alertButton">Show alert</button>
 
 <br>
-
-<button id="navigateButton">Navigate with custom domain</button>
-
-<br>
-
-<button id="postMessageButton">Post message</button>
-
-<br>
-
-<div id="nativeContent"></div>
 
 <script>
     document.getElementById("clientInfo").innerHTML = "Preferred language: " + window.navigator.language + "<br>Preferred languages: " + window.navigator.languages;
